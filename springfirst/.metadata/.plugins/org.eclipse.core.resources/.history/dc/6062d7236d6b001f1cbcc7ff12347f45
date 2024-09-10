@@ -1,0 +1,57 @@
+package com.hexaware.app.Controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.hexaware.app.Entity.Student;
+import com.hexaware.app.Service.StudentService;
+
+import jakarta.validation.Valid;
+
+@RestController
+public class StudentController {
+	
+	@Autowired
+	StudentService studSer;
+	@PostMapping("/saveStudent")
+	Student saveStudent(@Valid @RequestBody Student s)
+	{
+		Student s2=studSer.saveSt(s);
+		return s2;
+		
+	}
+	@GetMapping("/getStudents")
+	public List <Student> getStudents()
+	{
+		List<Student> users=studSer.getStuds();
+		return users;
+		
+	}
+	@DeleteMapping("/removeStud/{rno}")
+	public Student removeStud(@PathVariable int rno)
+	{
+		Student s=studSer.remove(rno);
+		return s;
+		
+	}
+	@PutMapping("updateName/{rn}/{nm}")
+	public String updateName(@PathVariable String nm,@PathVariable int rn)
+	{
+		String r=studSer.updateNM(nm,rn);
+		return r;
+	}
+	@GetMapping("/getName/{rno}")
+    public String getName(@PathVariable int rno) {
+		String s=studSer.getNameByRollNumber(rno);
+		return s;
+    }
+
+}

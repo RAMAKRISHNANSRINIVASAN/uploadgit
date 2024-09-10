@@ -1,0 +1,137 @@
+package com.example.demo;
+
+import java.util.Optional;
+import java.util.Scanner;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+
+import com.example.demo.BannkAccRepo.BankAccountRepository;
+import com.example.demo.Entities.BankAccount;
+
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ApplicationContext context=SpringApplication.run(Application.class, args);
+		BankAccountRepository rep =context.getBean(BankAccountRepository.class);
+		Scanner scanner = new Scanner(System.in);
+//		BankAccount bk1= new BankAccount();
+//		bk1.setAccountNumber(200);
+//		bk1.setName("Messi");
+//		bk1.setBalance(10000.9);
+//		bk1.setEmail("Messi10@gmail.com");
+//		rep.save(bk1);
+		
+
+		
+		//Open account 
+		
+//		Optional<BankAccount> ba = rep.findById(100);  
+//
+//		if (ba.isPresent()) {
+//		    BankAccount account = ba.get();  
+//		    if (account.getBalance() > 1000) {
+//		    System.out.println("Eligible to open");
+//		        rep.save(account); 
+//		    } else {
+//		        System.out.println("Not Eligible to open");
+//		    }
+//		} else {
+//		    System.out.println("Account not found");
+//		}
+	        
+		//Deposit
+		
+
+      
+//        System.out.print("Enter the account number: ");
+//        int accountNumber = scanner.nextInt();
+//
+//       
+//        System.out.print("Enter the amount to deposit: ");
+//        double depositAmount = scanner.nextDouble();
+//
+//        
+//        Optional<BankAccount> ba = rep.findById(accountNumber);
+//
+//        
+//        if (ba.isPresent()) {
+//            BankAccount account = ba.get();  
+//
+//            
+//            account.setBalance(account.getBalance() + depositAmount);
+//            rep.save(account);   
+//            System.out.println("Amount deposited successfully. New balance: " + account.getBalance());
+//        } else {
+//            System.out.println("Account not found");
+//        }
+//
+//        
+//        scanner.close();
+		
+		
+		// Withdraw
+		
+//		 System.out.print("Enter the account number: ");
+//	        int accountNumber = scanner.nextInt();
+//
+//	        
+//	        System.out.print("Enter the amount to withdraw: ");
+//	        double withdrawAmount = scanner.nextDouble();
+//
+//	       
+//	        Optional<BankAccount> ba = rep.findById(accountNumber);
+//
+//	       
+//	        if (ba.isPresent()) {
+//	            BankAccount account = ba.get(); 
+//
+//	           
+//	            if (account.getBalance() >= withdrawAmount) {
+//	                
+//	                account.setBalance(account.getBalance() - withdrawAmount);
+//	                rep.save(account);  
+//
+//	                System.out.println("Amount withdrawn successfully. New balance: " + account.getBalance());
+//	            } else {
+//	                System.out.println("Insufficient balance. Current balance: " + account.getBalance());
+//	            }
+//	        } else {
+//	            System.out.println("Account not found");
+//	        }
+//
+//	        
+//	        scanner.close();
+		
+		// Search by Acc No:
+	       
+		System.out.print("Enter the account number to search: ");
+        int accountNumber = scanner.nextInt();
+
+
+        Optional<BankAccount> ba = rep.findById(accountNumber);
+
+
+        if (ba.isPresent()) {
+            BankAccount account = ba.get();  
+
+           
+            System.out.println("Account found:");
+            System.out.println("Account Number: " + account.getAccountNumber());
+            System.out.println("Name: " + account.getName());
+            System.out.println("Balance: " + account.getBalance());
+            System.out.println("Email: " + account.getEmail());
+        } else {
+            System.out.println("Account not found");
+        }
+
+        
+        scanner.close();
+		
+	}
+
+}

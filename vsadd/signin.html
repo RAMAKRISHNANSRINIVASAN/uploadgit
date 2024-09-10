@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up and Sign In</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+
+<body>
+    <div class="d1">
+        <h2>User Authentication</h2>
+        <input type="text" placeholder="Enter your User ID" id="t1" required />
+        <input type="password" placeholder="Enter your Current Password" id="t2" required />
+        <input type="password" placeholder="Enter your New Password" id="t3" required />
+
+        <button onclick="signIn()">Sign In</button>
+        <button onclick="signUp()">Sign Up</button>
+        <button onclick="updatePassword()">Update Password</button>
+
+        <!-- Area to display error or success messages -->
+        <p id="message"></p>
+    </div>
+
+    <script src="signin.js"></script>
+</body>
+
+</html>

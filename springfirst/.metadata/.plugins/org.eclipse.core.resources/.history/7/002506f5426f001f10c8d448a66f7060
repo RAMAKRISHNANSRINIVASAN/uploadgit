@@ -1,0 +1,20 @@
+package com.hexaware.app;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.hexaware.app.Dao.RepStudent;
+import com.hexaware.app.Entity.Student;
+
+@SpringBootTest
+public class StudentRepositoryTest {
+@Autowired
+RepStudent rep;
+
+@Test
+void saveTest() {
+	Student s=new Student(1,"Ram",20,20000.0,"Ram@gmail.com","chennai");
+	rep.save(s);
+}
+}

@@ -1,0 +1,31 @@
+package com.example.demo;
+
+import java.util.Optional;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+
+import com.example.demo.BannkAccRepo.BankAccountRepository;
+import com.example.demo.Entities.BankAccount;
+import com.example.demo.Entities.User;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ApplicationContext context=SpringApplication.run(Application.class, args);
+		BankAccountRepository rep =context.getBean(BankAccountRepository.class);
+		
+		Optional<BankAccount> ba=	rep.findById(100);
+	        if (ba.getBalance() < 1000) {
+	           System.out.println("Not Eligible to open");
+	        }
+	        return repository.save(account);
+	    
+		
+		
+	}
+
+}

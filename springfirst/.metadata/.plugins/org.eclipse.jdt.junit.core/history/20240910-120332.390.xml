@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="com.hexaware.school" project="com.hexaware.school" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.hexaware.app.ApplicationTests" time="0.594" displayname="ApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.hexaware.app.ApplicationTests]">
+    <testcase name="contextLoads" classname="com.hexaware.app.ApplicationTests" time="0.594" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:com.hexaware.app.ApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+  <testsuite name="com.hexaware.app.StudentRepositoryTest" time="0.28" displayname="StudentRepositoryTest" uniqueid="[engine:junit-jupiter]/[class:com.hexaware.app.StudentRepositoryTest]">
+    <testcase name="saveTest" classname="com.hexaware.app.StudentRepositoryTest" time="0.28" displayname="saveTest()" uniqueid="[engine:junit-jupiter]/[class:com.hexaware.app.StudentRepositoryTest]/[method:saveTest()]"/>
+  </testsuite>
+</testrun>

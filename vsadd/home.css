@@ -1,0 +1,30 @@
+.d1 {
+    border: 2px solid blue; /* Adds a 2px solid blue border */
+    width: 300px; /* Sets the width of the container */
+    background-color: pink; /* Sets the background color to pink */
+    margin: 150px auto; /* Centers the div horizontally on the page */
+    padding: 20px; /* Adds some padding inside the container */
+    border-radius: 10px; /* Optional: rounds the corners of the box */
+}
+
+input {
+    display: block;
+    margin-bottom: 10px; /* Adds space between inputs */
+    padding: 5px;
+    width: 100%; /* Makes the inputs full width of the container */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkblue; /* Changes button color on hover */
+}

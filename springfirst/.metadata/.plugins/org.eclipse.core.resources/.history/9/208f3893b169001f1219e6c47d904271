@@ -1,0 +1,50 @@
+package com.example.demo;
+
+import java.util.Optional;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+
+import com.example.demo.BannkAccRepo.BankAccountRepository;
+import com.example.demo.Entities.BankAccount;
+
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ApplicationContext context=SpringApplication.run(Application.class, args);
+		BankAccountRepository rep =context.getBean(BankAccountRepository.class);
+		
+		BankAccount bk1= new BankAccount();
+		bk1.setAccountNumber(100);
+		bk1.setName("Ron");
+		bk1.setBalance(7000.9);
+		bk1.setEmail("Ron7@gmail.com");
+		rep.save(bk1);
+		
+
+		
+		
+		
+//		Optional<BankAccount> ba = rep.findById(100);  
+//
+//		if (ba.isPresent()) {
+//		    BankAccount account = ba.get();  
+//		    if (account.getBalance() > 1000) {
+//		        rep.save(account); 
+//		    } else {
+//		        System.out.println("Not Eligible to open");
+//		    }
+//		} else {
+//		    System.out.println("Account not found");
+//		}
+	        
+	    
+	       
+		
+	}
+
+}

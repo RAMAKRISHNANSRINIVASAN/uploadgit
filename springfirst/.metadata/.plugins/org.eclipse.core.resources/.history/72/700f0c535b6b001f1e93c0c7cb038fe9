@@ -1,0 +1,72 @@
+package com.hexaware.app.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+
+@Entity
+public class Student {
+    @Id
+    int Roll;
+    
+    String Name;
+
+    @Min(value=18, message="Age cannot be less than 18")
+    @Max(value=60, message="Age cannot be greater than 60")
+    int age;
+
+    Double fee;
+
+    // Default constructor
+    public Student() {
+    }
+
+    // Updated constructor with age parameter
+    public Student(int roll, String name, int age, Double fee) {
+        super();
+        this.Roll = roll;
+        this.Name = name;
+        this.age = age;
+        this.fee = fee;
+    }
+
+    // Getters and Setters
+    public int getRoll() {
+        return Roll;
+    }
+
+    public void setRoll(int roll) {
+        this.Roll = roll;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        this.Name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Double getFee() {
+        return fee;
+    }
+
+    public void setFee(Double fee) {
+        this.fee = fee;
+    }
+
+    @Override
+    public String toString() {
+        return "Student [Roll=" + Roll + ", Name=" + Name + ", Age=" + age + ", Fee=" + fee + "]";
+    }
+}
